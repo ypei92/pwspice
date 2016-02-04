@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="circuit.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="50213" topLine="1632" />
+	</File>
+	<File name="circuit.h" open="1" top="0" tabpos="3">
+		<Cursor position="5305" topLine="86" />
+	</File>
+	<File name="device\CAP_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="218" topLine="0" />
+	</File>
+	<File name="device\CAP_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="565" topLine="2" />
+	</File>
+	<File name="device\CONT_CC_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="236" topLine="0" />
+	</File>
+	<File name="device\CONT_CC_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="687" topLine="5" />
+	</File>
+	<File name="device\CONT_VC_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="280" topLine="0" />
+	</File>
+	<File name="device\CONT_VC_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="697" topLine="5" />
+	</File>
+	<File name="device\DIODE_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="202" topLine="0" />
+	</File>
+	<File name="device\DIODE_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="551" topLine="1" />
+	</File>
+	<File name="device\IND_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="220" topLine="0" />
+	</File>
+	<File name="device\IND_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="563" topLine="1" />
+	</File>
+	<File name="device\ISRC_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="202" topLine="0" />
+	</File>
+	<File name="device\ISRC_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="540" topLine="1" />
+	</File>
+	<File name="device\MOS_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="251" topLine="0" />
+	</File>
+	<File name="device\MOS_DEVICE.h" open="0" top="0" tabpos="5">
+		<Cursor position="685" topLine="5" />
+	</File>
+	<File name="device\RES_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="198" topLine="0" />
+	</File>
+	<File name="device\RES_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="556" topLine="1" />
+	</File>
+	<File name="device\VSRC_DEVICE.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="202" topLine="0" />
+	</File>
+	<File name="device\VSRC_DEVICE.h" open="0" top="0" tabpos="0">
+		<Cursor position="540" topLine="1" />
+	</File>
+	<File name="device\model\default_model.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="47" topLine="0" />
+	</File>
+	<File name="device\model\default_model.h" open="0" top="0" tabpos="0">
+		<Cursor position="939" topLine="15" />
+	</File>
+	<File name="device\model\element\element.h" open="0" top="0" tabpos="0">
+		<Cursor position="165" topLine="0" />
+	</File>
+	<File name="device\model\element\element_cap.h" open="0" top="0" tabpos="0">
+		<Cursor position="287" topLine="0" />
+	</File>
+	<File name="device\model\element\element_cccs.h" open="0" top="0" tabpos="0">
+		<Cursor position="305" topLine="0" />
+	</File>
+	<File name="device\model\element\element_ccvs.h" open="0" top="0" tabpos="0">
+		<Cursor position="269" topLine="0" />
+	</File>
+	<File name="device\model\element\element_ind.h" open="0" top="0" tabpos="0">
+		<Cursor position="287" topLine="0" />
+	</File>
+	<File name="device\model\element\element_nmos.h" open="0" top="0" tabpos="0">
+		<Cursor position="343" topLine="0" />
+	</File>
+	<File name="device\model\element\element_pmos.h" open="0" top="0" tabpos="0">
+		<Cursor position="343" topLine="1" />
+	</File>
+	<File name="device\model\element\element_vccs.h" open="0" top="0" tabpos="0">
+		<Cursor position="305" topLine="0" />
+	</File>
+	<File name="device\model\element\element_vcvs.h" open="0" top="0" tabpos="0">
+		<Cursor position="305" topLine="0" />
+	</File>
+	<File name="device\model\model_cap.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="429" topLine="0" />
+	</File>
+	<File name="device\model\model_cap.h" open="0" top="0" tabpos="5">
+		<Cursor position="2927" topLine="66" />
+	</File>
+	<File name="device\model\model_cccs.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="429" topLine="0" />
+	</File>
+	<File name="device\model\model_cccs.h" open="0" top="0" tabpos="0">
+		<Cursor position="2317" topLine="48" />
+	</File>
+	<File name="device\model\model_ccvs.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="433" topLine="1" />
+	</File>
+	<File name="device\model\model_ccvs.h" open="0" top="0" tabpos="0">
+		<Cursor position="2705" topLine="51" />
+	</File>
+	<File name="device\model\model_diode.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="425" topLine="11" />
+	</File>
+	<File name="device\model\model_diode.h" open="0" top="0" tabpos="5">
+		<Cursor position="1189" topLine="20" />
+	</File>
+	<File name="device\model\model_ind.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="431" topLine="0" />
+	</File>
+	<File name="device\model\model_ind.h" open="0" top="0" tabpos="6">
+		<Cursor position="2907" topLine="56" />
+	</File>
+	<File name="device\model\model_isrc.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="418" topLine="0" />
+	</File>
+	<File name="device\model\model_isrc.h" open="0" top="0" tabpos="4">
+		<Cursor position="2160" topLine="48" />
+	</File>
+	<File name="device\model\model_nmos.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="448" topLine="23" />
+	</File>
+	<File name="device\model\model_nmos.h" open="0" top="0" tabpos="0">
+		<Cursor position="1144" topLine="20" />
+	</File>
+	<File name="device\model\model_pmos.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="446" topLine="0" />
+	</File>
+	<File name="device\model\model_pmos.h" open="0" top="0" tabpos="4">
+		<Cursor position="1144" topLine="20" />
+	</File>
+	<File name="device\model\model_res_linear.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="460" topLine="23" />
+	</File>
+	<File name="device\model\model_res_linear.h" open="0" top="0" tabpos="4">
+		<Cursor position="1773" topLine="46" />
+	</File>
+	<File name="device\model\model_vccs.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="441" topLine="0" />
+	</File>
+	<File name="device\model\model_vccs.h" open="0" top="0" tabpos="0">
+		<Cursor position="4708" topLine="100" />
+	</File>
+	<File name="device\model\model_vcvs.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="280" topLine="0" />
+	</File>
+	<File name="device\model\model_vcvs.h" open="0" top="0" tabpos="0">
+		<Cursor position="6307" topLine="117" />
+	</File>
+	<File name="device\model\model_vsrc.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="418" topLine="0" />
+	</File>
+	<File name="device\model\model_vsrc.h" open="0" top="0" tabpos="6">
+		<Cursor position="2571" topLine="51" />
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="412" topLine="64" />
+	</File>
+	<File name="mySolver.h" open="0" top="0" tabpos="8">
+		<Cursor position="2846" topLine="84" />
+	</File>
+</CodeBlocks_layout_file>

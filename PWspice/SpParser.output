@@ -1,0 +1,1671 @@
+语法
+
+    0 $accept: spice $end
+
+    1 spice: netlist end
+
+    2 end: end EOL
+    3    | END EOL
+
+    4 netlist: netlist line
+    5        | line
+
+    6 line: component EOL
+    7     | error EOL
+    8     | EOL
+
+    9 component: resistor
+   10          | capacitor
+   11          | inductor
+   12          | currentsrc
+   13          | voltagesrc
+   14          | vccs
+   15          | cccs
+   16          | ccvs
+   17          | vcvs
+   18          | opamp
+   19          | switch_on_off
+   20          | diode
+   21          | mos
+
+   22 resistor: RESISTOR node node value
+
+   23 capacitor: CAPACITOR node node value
+   24          | CAPACITOR node node value value
+
+   25 inductor: INDUCTOR node node value
+   26         | INDUCTOR node node value value
+
+   27 voltagesrc: VOLTAGESRC node node value
+
+   28 currentsrc: CURRENTSRC node node value
+
+   29 vccs: VCCS node node node node value
+
+   30 cccs: CCCS node node node value
+
+   31 ccvs: CCVS node node node value
+
+   32 vcvs: VCVS node node node node value
+
+   33 opamp: OPAMP node node node node
+
+   34 switch_on_off: SWITCH node node
+
+   35 diode: DIODE node node value
+
+   36 mos: MOS node node node node value value
+
+   37 node: variable
+   38     | INTEGER
+
+   39 variable: STRING
+   40         | RESISTOR
+   41         | CAPACITOR
+   42         | INDUCTOR
+   43         | CURRENTSRC
+   44         | VOLTAGESRC
+   45         | VCCS
+   46         | CCCS
+   47         | CCVS
+   48         | VCVS
+   49         | OPAMP
+   50         | SWITCH
+   51         | DIODE
+   52         | MOS
+
+   53 value: VALUE
+   54      | FLOAT
+   55      | INTEGER
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256) 7
+FLOAT (258) 54
+STRING (259) 39
+INTEGER (260) 38 55
+RESISTOR (261) 22 40
+CAPACITOR (262) 23 24 41
+INDUCTOR (263) 25 26 42
+CURRENTSRC (264) 28 43
+VOLTAGESRC (265) 27 44
+VCCS (266) 29 45
+CCCS (267) 30 46
+CCVS (268) 31 47
+VCVS (269) 32 48
+OPAMP (270) 33 49
+SWITCH (271) 34 50
+DIODE (272) 35 51
+MOS (273) 36 52
+VALUE (274) 53
+END (275) 3
+EOL (276) 2 3 6 7 8
+
+
+Nonterminals, with rules where they appear
+
+$accept (22)
+    左： 0
+spice (23)
+    左： 1, 右： 0
+end (24)
+    左： 2 3, 右： 1 2
+netlist (25)
+    左： 4 5, 右： 1 4
+line (26)
+    左： 6 7 8, 右： 4 5
+component (27)
+    左： 9 10 11 12 13 14 15 16 17 18 19 20 21, 右： 6
+resistor (28)
+    左： 22, 右： 9
+capacitor (29)
+    左： 23 24, 右： 10
+inductor (30)
+    左： 25 26, 右： 11
+voltagesrc (31)
+    左： 27, 右： 13
+currentsrc (32)
+    左： 28, 右： 12
+vccs (33)
+    左： 29, 右： 14
+cccs (34)
+    左： 30, 右： 15
+ccvs (35)
+    左： 31, 右： 16
+vcvs (36)
+    左： 32, 右： 17
+opamp (37)
+    左： 33, 右： 18
+switch_on_off (38)
+    左： 34, 右： 19
+diode (39)
+    左： 35, 右： 20
+mos (40)
+    左： 36, 右： 21
+node (41)
+    左： 37 38, 右： 22 23 24 25 26 27 28 29 30 31 32 33 34 35
+    36
+variable (42)
+    左： 39 40 41 42 43 44 45 46 47 48 49 50 51 52, 右： 37
+value (43)
+    左： 53 54 55, 右： 22 23 24 25 26 27 28 29 30 31 32 35 36
+
+
+状态 0
+
+    0 $accept: . spice $end
+
+    error       shift, and go to state 1
+    RESISTOR    shift, and go to state 2
+    CAPACITOR   shift, and go to state 3
+    INDUCTOR    shift, and go to state 4
+    CURRENTSRC  shift, and go to state 5
+    VOLTAGESRC  shift, and go to state 6
+    VCCS        shift, and go to state 7
+    CCCS        shift, and go to state 8
+    CCVS        shift, and go to state 9
+    VCVS        shift, and go to state 10
+    OPAMP       shift, and go to state 11
+    SWITCH      shift, and go to state 12
+    DIODE       shift, and go to state 13
+    MOS         shift, and go to state 14
+    EOL         shift, and go to state 15
+
+    spice          转到状态16
+    netlist        转到状态17
+    line           转到状态18
+    component      转到状态19
+    resistor       转到状态20
+    capacitor      转到状态21
+    inductor       转到状态22
+    voltagesrc     转到状态23
+    currentsrc     转到状态24
+    vccs           转到状态25
+    cccs           转到状态26
+    ccvs           转到状态27
+    vcvs           转到状态28
+    opamp          转到状态29
+    switch_on_off  转到状态30
+    diode          转到状态31
+    mos            转到状态32
+
+
+状态 1
+
+    7 line: error . EOL
+
+    EOL  shift, and go to state 33
+
+
+状态 2
+
+   22 resistor: RESISTOR . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态49
+    variable  转到状态50
+
+
+状态 3
+
+   23 capacitor: CAPACITOR . node node value
+   24          | CAPACITOR . node node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态51
+    variable  转到状态50
+
+
+状态 4
+
+   25 inductor: INDUCTOR . node node value
+   26         | INDUCTOR . node node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态52
+    variable  转到状态50
+
+
+状态 5
+
+   28 currentsrc: CURRENTSRC . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态53
+    variable  转到状态50
+
+
+状态 6
+
+   27 voltagesrc: VOLTAGESRC . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态54
+    variable  转到状态50
+
+
+状态 7
+
+   29 vccs: VCCS . node node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态55
+    variable  转到状态50
+
+
+状态 8
+
+   30 cccs: CCCS . node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态56
+    variable  转到状态50
+
+
+状态 9
+
+   31 ccvs: CCVS . node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态57
+    variable  转到状态50
+
+
+状态 10
+
+   32 vcvs: VCVS . node node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态58
+    variable  转到状态50
+
+
+状态 11
+
+   33 opamp: OPAMP . node node node node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态59
+    variable  转到状态50
+
+
+状态 12
+
+   34 switch_on_off: SWITCH . node node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态60
+    variable  转到状态50
+
+
+状态 13
+
+   35 diode: DIODE . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态61
+    variable  转到状态50
+
+
+状态 14
+
+   36 mos: MOS . node node node node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态62
+    variable  转到状态50
+
+
+状态 15
+
+    8 line: EOL .
+
+    $default  reduce using rule 8 (line)
+
+
+状态 16
+
+    0 $accept: spice . $end
+
+    $end  shift, and go to state 63
+
+
+状态 17
+
+    1 spice: netlist . end
+    4 netlist: netlist . line
+
+    error       shift, and go to state 1
+    RESISTOR    shift, and go to state 2
+    CAPACITOR   shift, and go to state 3
+    INDUCTOR    shift, and go to state 4
+    CURRENTSRC  shift, and go to state 5
+    VOLTAGESRC  shift, and go to state 6
+    VCCS        shift, and go to state 7
+    CCCS        shift, and go to state 8
+    CCVS        shift, and go to state 9
+    VCVS        shift, and go to state 10
+    OPAMP       shift, and go to state 11
+    SWITCH      shift, and go to state 12
+    DIODE       shift, and go to state 13
+    MOS         shift, and go to state 14
+    END         shift, and go to state 64
+    EOL         shift, and go to state 15
+
+    end            转到状态65
+    line           转到状态66
+    component      转到状态19
+    resistor       转到状态20
+    capacitor      转到状态21
+    inductor       转到状态22
+    voltagesrc     转到状态23
+    currentsrc     转到状态24
+    vccs           转到状态25
+    cccs           转到状态26
+    ccvs           转到状态27
+    vcvs           转到状态28
+    opamp          转到状态29
+    switch_on_off  转到状态30
+    diode          转到状态31
+    mos            转到状态32
+
+
+状态 18
+
+    5 netlist: line .
+
+    $default  reduce using rule 5 (netlist)
+
+
+状态 19
+
+    6 line: component . EOL
+
+    EOL  shift, and go to state 67
+
+
+状态 20
+
+    9 component: resistor .
+
+    $default  reduce using rule 9 (component)
+
+
+状态 21
+
+   10 component: capacitor .
+
+    $default  reduce using rule 10 (component)
+
+
+状态 22
+
+   11 component: inductor .
+
+    $default  reduce using rule 11 (component)
+
+
+状态 23
+
+   13 component: voltagesrc .
+
+    $default  reduce using rule 13 (component)
+
+
+状态 24
+
+   12 component: currentsrc .
+
+    $default  reduce using rule 12 (component)
+
+
+状态 25
+
+   14 component: vccs .
+
+    $default  reduce using rule 14 (component)
+
+
+状态 26
+
+   15 component: cccs .
+
+    $default  reduce using rule 15 (component)
+
+
+状态 27
+
+   16 component: ccvs .
+
+    $default  reduce using rule 16 (component)
+
+
+状态 28
+
+   17 component: vcvs .
+
+    $default  reduce using rule 17 (component)
+
+
+状态 29
+
+   18 component: opamp .
+
+    $default  reduce using rule 18 (component)
+
+
+状态 30
+
+   19 component: switch_on_off .
+
+    $default  reduce using rule 19 (component)
+
+
+状态 31
+
+   20 component: diode .
+
+    $default  reduce using rule 20 (component)
+
+
+状态 32
+
+   21 component: mos .
+
+    $default  reduce using rule 21 (component)
+
+
+状态 33
+
+    7 line: error EOL .
+
+    $default  reduce using rule 7 (line)
+
+
+状态 34
+
+   39 variable: STRING .
+
+    $default  reduce using rule 39 (variable)
+
+
+状态 35
+
+   38 node: INTEGER .
+
+    $default  reduce using rule 38 (node)
+
+
+状态 36
+
+   40 variable: RESISTOR .
+
+    $default  reduce using rule 40 (variable)
+
+
+状态 37
+
+   41 variable: CAPACITOR .
+
+    $default  reduce using rule 41 (variable)
+
+
+状态 38
+
+   42 variable: INDUCTOR .
+
+    $default  reduce using rule 42 (variable)
+
+
+状态 39
+
+   43 variable: CURRENTSRC .
+
+    $default  reduce using rule 43 (variable)
+
+
+状态 40
+
+   44 variable: VOLTAGESRC .
+
+    $default  reduce using rule 44 (variable)
+
+
+状态 41
+
+   45 variable: VCCS .
+
+    $default  reduce using rule 45 (variable)
+
+
+状态 42
+
+   46 variable: CCCS .
+
+    $default  reduce using rule 46 (variable)
+
+
+状态 43
+
+   47 variable: CCVS .
+
+    $default  reduce using rule 47 (variable)
+
+
+状态 44
+
+   48 variable: VCVS .
+
+    $default  reduce using rule 48 (variable)
+
+
+状态 45
+
+   49 variable: OPAMP .
+
+    $default  reduce using rule 49 (variable)
+
+
+状态 46
+
+   50 variable: SWITCH .
+
+    $default  reduce using rule 50 (variable)
+
+
+状态 47
+
+   51 variable: DIODE .
+
+    $default  reduce using rule 51 (variable)
+
+
+状态 48
+
+   52 variable: MOS .
+
+    $default  reduce using rule 52 (variable)
+
+
+状态 49
+
+   22 resistor: RESISTOR node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态68
+    variable  转到状态50
+
+
+状态 50
+
+   37 node: variable .
+
+    $default  reduce using rule 37 (node)
+
+
+状态 51
+
+   23 capacitor: CAPACITOR node . node value
+   24          | CAPACITOR node . node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态69
+    variable  转到状态50
+
+
+状态 52
+
+   25 inductor: INDUCTOR node . node value
+   26         | INDUCTOR node . node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态70
+    variable  转到状态50
+
+
+状态 53
+
+   28 currentsrc: CURRENTSRC node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态71
+    variable  转到状态50
+
+
+状态 54
+
+   27 voltagesrc: VOLTAGESRC node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态72
+    variable  转到状态50
+
+
+状态 55
+
+   29 vccs: VCCS node . node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态73
+    variable  转到状态50
+
+
+状态 56
+
+   30 cccs: CCCS node . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态74
+    variable  转到状态50
+
+
+状态 57
+
+   31 ccvs: CCVS node . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态75
+    variable  转到状态50
+
+
+状态 58
+
+   32 vcvs: VCVS node . node node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态76
+    variable  转到状态50
+
+
+状态 59
+
+   33 opamp: OPAMP node . node node node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态77
+    variable  转到状态50
+
+
+状态 60
+
+   34 switch_on_off: SWITCH node . node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态78
+    variable  转到状态50
+
+
+状态 61
+
+   35 diode: DIODE node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态79
+    variable  转到状态50
+
+
+状态 62
+
+   36 mos: MOS node . node node node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态80
+    variable  转到状态50
+
+
+状态 63
+
+    0 $accept: spice $end .
+
+    $default  接受
+
+
+状态 64
+
+    3 end: END . EOL
+
+    EOL  shift, and go to state 81
+
+
+状态 65
+
+    1 spice: netlist end .
+    2 end: end . EOL
+
+    EOL  shift, and go to state 82
+
+    $default  reduce using rule 1 (spice)
+
+
+状态 66
+
+    4 netlist: netlist line .
+
+    $default  reduce using rule 4 (netlist)
+
+
+状态 67
+
+    6 line: component EOL .
+
+    $default  reduce using rule 6 (line)
+
+
+状态 68
+
+   22 resistor: RESISTOR node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态86
+
+
+状态 69
+
+   23 capacitor: CAPACITOR node node . value
+   24          | CAPACITOR node node . value value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态87
+
+
+状态 70
+
+   25 inductor: INDUCTOR node node . value
+   26         | INDUCTOR node node . value value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态88
+
+
+状态 71
+
+   28 currentsrc: CURRENTSRC node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态89
+
+
+状态 72
+
+   27 voltagesrc: VOLTAGESRC node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态90
+
+
+状态 73
+
+   29 vccs: VCCS node node . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态91
+    variable  转到状态50
+
+
+状态 74
+
+   30 cccs: CCCS node node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态92
+    variable  转到状态50
+
+
+状态 75
+
+   31 ccvs: CCVS node node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态93
+    variable  转到状态50
+
+
+状态 76
+
+   32 vcvs: VCVS node node . node node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态94
+    variable  转到状态50
+
+
+状态 77
+
+   33 opamp: OPAMP node node . node node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态95
+    variable  转到状态50
+
+
+状态 78
+
+   34 switch_on_off: SWITCH node node .
+
+    $default  reduce using rule 34 (switch_on_off)
+
+
+状态 79
+
+   35 diode: DIODE node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态96
+
+
+状态 80
+
+   36 mos: MOS node node . node node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态97
+    variable  转到状态50
+
+
+状态 81
+
+    3 end: END EOL .
+
+    $default  reduce using rule 3 (end)
+
+
+状态 82
+
+    2 end: end EOL .
+
+    $default  reduce using rule 2 (end)
+
+
+状态 83
+
+   54 value: FLOAT .
+
+    $default  reduce using rule 54 (value)
+
+
+状态 84
+
+   55 value: INTEGER .
+
+    $default  reduce using rule 55 (value)
+
+
+状态 85
+
+   53 value: VALUE .
+
+    $default  reduce using rule 53 (value)
+
+
+状态 86
+
+   22 resistor: RESISTOR node node value .
+
+    $default  reduce using rule 22 (resistor)
+
+
+状态 87
+
+   23 capacitor: CAPACITOR node node value .
+   24          | CAPACITOR node node value . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    $default  reduce using rule 23 (capacitor)
+
+    value  转到状态98
+
+
+状态 88
+
+   25 inductor: INDUCTOR node node value .
+   26         | INDUCTOR node node value . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    $default  reduce using rule 25 (inductor)
+
+    value  转到状态99
+
+
+状态 89
+
+   28 currentsrc: CURRENTSRC node node value .
+
+    $default  reduce using rule 28 (currentsrc)
+
+
+状态 90
+
+   27 voltagesrc: VOLTAGESRC node node value .
+
+    $default  reduce using rule 27 (voltagesrc)
+
+
+状态 91
+
+   29 vccs: VCCS node node node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态100
+    variable  转到状态50
+
+
+状态 92
+
+   30 cccs: CCCS node node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态101
+
+
+状态 93
+
+   31 ccvs: CCVS node node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态102
+
+
+状态 94
+
+   32 vcvs: VCVS node node node . node value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态103
+    variable  转到状态50
+
+
+状态 95
+
+   33 opamp: OPAMP node node node . node
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态104
+    variable  转到状态50
+
+
+状态 96
+
+   35 diode: DIODE node node value .
+
+    $default  reduce using rule 35 (diode)
+
+
+状态 97
+
+   36 mos: MOS node node node . node value value
+
+    STRING      shift, and go to state 34
+    INTEGER     shift, and go to state 35
+    RESISTOR    shift, and go to state 36
+    CAPACITOR   shift, and go to state 37
+    INDUCTOR    shift, and go to state 38
+    CURRENTSRC  shift, and go to state 39
+    VOLTAGESRC  shift, and go to state 40
+    VCCS        shift, and go to state 41
+    CCCS        shift, and go to state 42
+    CCVS        shift, and go to state 43
+    VCVS        shift, and go to state 44
+    OPAMP       shift, and go to state 45
+    SWITCH      shift, and go to state 46
+    DIODE       shift, and go to state 47
+    MOS         shift, and go to state 48
+
+    node      转到状态105
+    variable  转到状态50
+
+
+状态 98
+
+   24 capacitor: CAPACITOR node node value value .
+
+    $default  reduce using rule 24 (capacitor)
+
+
+状态 99
+
+   26 inductor: INDUCTOR node node value value .
+
+    $default  reduce using rule 26 (inductor)
+
+
+状态 100
+
+   29 vccs: VCCS node node node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态106
+
+
+状态 101
+
+   30 cccs: CCCS node node node value .
+
+    $default  reduce using rule 30 (cccs)
+
+
+状态 102
+
+   31 ccvs: CCVS node node node value .
+
+    $default  reduce using rule 31 (ccvs)
+
+
+状态 103
+
+   32 vcvs: VCVS node node node node . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态107
+
+
+状态 104
+
+   33 opamp: OPAMP node node node node .
+
+    $default  reduce using rule 33 (opamp)
+
+
+状态 105
+
+   36 mos: MOS node node node node . value value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态108
+
+
+状态 106
+
+   29 vccs: VCCS node node node node value .
+
+    $default  reduce using rule 29 (vccs)
+
+
+状态 107
+
+   32 vcvs: VCVS node node node node value .
+
+    $default  reduce using rule 32 (vcvs)
+
+
+状态 108
+
+   36 mos: MOS node node node node value . value
+
+    FLOAT    shift, and go to state 83
+    INTEGER  shift, and go to state 84
+    VALUE    shift, and go to state 85
+
+    value  转到状态109
+
+
+状态 109
+
+   36 mos: MOS node node node node value value .
+
+    $default  reduce using rule 36 (mos)

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="beta4" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\beta4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\beta4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="circuit.cpp" />
+		<Unit filename="circuit.h" />
+		<Unit filename="device\CAP_DEVICE.cpp" />
+		<Unit filename="device\CAP_DEVICE.h" />
+		<Unit filename="device\CONT_CC_DEVICE.cpp" />
+		<Unit filename="device\CONT_CC_DEVICE.h" />
+		<Unit filename="device\CONT_VC_DEVICE.cpp" />
+		<Unit filename="device\CONT_VC_DEVICE.h" />
+		<Unit filename="device\DIODE_DEVICE.cpp" />
+		<Unit filename="device\DIODE_DEVICE.h" />
+		<Unit filename="device\IND_DEVICE.cpp" />
+		<Unit filename="device\IND_DEVICE.h" />
+		<Unit filename="device\ISRC_DEVICE.cpp" />
+		<Unit filename="device\ISRC_DEVICE.h" />
+		<Unit filename="device\MOS_DEVICE.cpp" />
+		<Unit filename="device\MOS_DEVICE.h" />
+		<Unit filename="device\RES_DEVICE.cpp" />
+		<Unit filename="device\RES_DEVICE.h" />
+		<Unit filename="device\VSRC_DEVICE.cpp" />
+		<Unit filename="device\VSRC_DEVICE.h" />
+		<Unit filename="device\model\default_model.cpp" />
+		<Unit filename="device\model\default_model.h" />
+		<Unit filename="device\model\element\element.h" />
+		<Unit filename="device\model\element\element_cap.h" />
+		<Unit filename="device\model\element\element_cccs.h" />
+		<Unit filename="device\model\element\element_ccvs.h" />
+		<Unit filename="device\model\element\element_diode.h" />
+		<Unit filename="device\model\element\element_ind.h" />
+		<Unit filename="device\model\element\element_isrc.h" />
+		<Unit filename="device\model\element\element_nmos.h" />
+		<Unit filename="device\model\element\element_pmos.h" />
+		<Unit filename="device\model\element\element_res.h" />
+		<Unit filename="device\model\element\element_vccs.h" />
+		<Unit filename="device\model\element\element_vcvs.h" />
+		<Unit filename="device\model\element\element_vsrc.h" />
+		<Unit filename="device\model\model_cap.cpp" />
+		<Unit filename="device\model\model_cap.h" />
+		<Unit filename="device\model\model_cccs.cpp" />
+		<Unit filename="device\model\model_cccs.h" />
+		<Unit filename="device\model\model_ccvs.cpp" />
+		<Unit filename="device\model\model_ccvs.h" />
+		<Unit filename="device\model\model_diode.cpp" />
+		<Unit filename="device\model\model_diode.h" />
+		<Unit filename="device\model\model_ind.cpp" />
+		<Unit filename="device\model\model_ind.h" />
+		<Unit filename="device\model\model_isrc.cpp" />
+		<Unit filename="device\model\model_isrc.h" />
+		<Unit filename="device\model\model_nmos.cpp" />
+		<Unit filename="device\model\model_nmos.h" />
+		<Unit filename="device\model\model_pmos.cpp" />
+		<Unit filename="device\model\model_pmos.h" />
+		<Unit filename="device\model\model_res_linear.cpp" />
+		<Unit filename="device\model\model_res_linear.h" />
+		<Unit filename="device\model\model_vccs.cpp" />
+		<Unit filename="device\model\model_vccs.h" />
+		<Unit filename="device\model\model_vcvs.cpp" />
+		<Unit filename="device\model\model_vcvs.h" />
+		<Unit filename="device\model\model_vsrc.cpp" />
+		<Unit filename="device\model\model_vsrc.h" />
+		<Unit filename="linkList.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mySolver.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

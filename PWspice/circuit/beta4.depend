@@ -1,0 +1,216 @@
+# depslib dependency file v1.0
+1397655063 source:c:\users\wangyh\desktop\beta4\circuit.cpp
+	"circuit.h"
+	"mySolver.h"
+	<iomanip>
+	<fstream>
+
+1397653631 c:\users\wangyh\desktop\beta4\circuit.h
+	"./device/CAP_DEVICE.h"
+	"./device/IND_DEVICE.h"
+	"./device/RES_DEVICE.h"
+	"./device/VSRC_DEVICE.h"
+	"./device/ISRC_DEVICE.h"
+	"./device/MOS_DEVICE.h"
+	"./device/DIODE_DEVICE.h"
+	"./device/CONT_CC_DEVICE.h"
+	"./device/CONT_VC_DEVICE.h"
+
+1397649513 c:\users\wangyh\desktop\beta4\device\cap_device.h
+	"./model/model_cap.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_cap.h
+	"default_model.h"
+	"./element/element_cap.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\default_model.h
+	<iostream>
+	<cstring>
+	<cmath>
+	"./element/element.h"
+	<complex>
+
+1397649581 c:\users\wangyh\desktop\beta4\device\model\element\element.h
+	<stdio.h>
+	<stdlib.h>
+	<complex>
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_cap.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\ind_device.h
+	"./model/model_ind.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_ind.h
+	"default_model.h"
+	"./element/element_ind.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_ind.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\res_device.h
+	"./model/model_res_linear.h"
+
+1397649721 c:\users\wangyh\desktop\beta4\device\model\model_res_linear.h
+	"default_model.h"
+	"./element/element_res.h"
+
+1397450939 c:\users\wangyh\desktop\beta4\device\model\element\element_res.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\vsrc_device.h
+	"./model/model_vsrc.h"
+
+1397649515 c:\users\wangyh\desktop\beta4\device\model\model_vsrc.h
+	"default_model.h"
+	"./element/element_vsrc.h"
+
+1397450939 c:\users\wangyh\desktop\beta4\device\model\element\element_vsrc.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\isrc_device.h
+	"./model/model_isrc.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_isrc.h
+	"default_model.h"
+	"./element/element_isrc.h"
+
+1397450939 c:\users\wangyh\desktop\beta4\device\model\element\element_isrc.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\mos_device.h
+	"./model/model_pmos.h"
+	"./model/model_nmos.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_pmos.h
+	"default_model.h"
+	"./element/element_pmos.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_pmos.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_nmos.h
+	"default_model.h"
+	"./element/element_nmos.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_nmos.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\diode_device.h
+	"./model/model_diode.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_diode.h
+	"default_model.h"
+	"./element/element_diode.h"
+
+1397450939 c:\users\wangyh\desktop\beta4\device\model\element\element_diode.h
+	"element.h"
+
+1397649513 c:\users\wangyh\desktop\beta4\device\cont_cc_device.h
+	"./model/model_cccs.h"
+	"./model/model_ccvs.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_cccs.h
+	"default_model.h"
+	"./element/element_cccs.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_cccs.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_ccvs.h
+	"default_model.h"
+	"./element/element_ccvs.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_ccvs.h
+	"element.h"
+
+1397649513 c:\users\wangyh\desktop\beta4\device\cont_vc_device.h
+	"./model/model_vccs.h"
+	"./model/model_vcvs.h"
+
+1397649762 c:\users\wangyh\desktop\beta4\device\model\model_vccs.h
+	"default_model.h"
+	"./element/element_vccs.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_vccs.h
+	"element.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\model_vcvs.h
+	"default_model.h"
+	"./element/element_vcvs.h"
+
+1397649514 c:\users\wangyh\desktop\beta4\device\model\element\element_vcvs.h
+	"element.h"
+
+1397649880 c:\users\wangyh\desktop\beta4\mysolver.h
+	<iostream>
+
+1397649513 source:c:\users\wangyh\desktop\beta4\device\cap_device.cpp
+	"CAP_DEVICE.h"
+
+1397649513 source:c:\users\wangyh\desktop\beta4\device\cont_cc_device.cpp
+	"CONT_CC_DEVICE.h"
+
+1397649513 source:c:\users\wangyh\desktop\beta4\device\cont_vc_device.cpp
+	"CONT_VC_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\diode_device.cpp
+	"DIODE_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\ind_device.cpp
+	"IND_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\isrc_device.cpp
+	"ISRC_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\mos_device.cpp
+	"MOS_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\res_device.cpp
+	"RES_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\vsrc_device.cpp
+	"VSRC_DEVICE.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\default_model.cpp
+	"default_model.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_cap.cpp
+	"model_cap.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_cccs.cpp
+	"model_cccs.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_ccvs.cpp
+	"model_ccvs.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_diode.cpp
+	"model_diode.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_ind.cpp
+	"model_ind.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_isrc.cpp
+	"model_isrc.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_nmos.cpp
+	"model_nmos.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_pmos.cpp
+	"model_pmos.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_res_linear.cpp
+	"model_res_linear.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_vccs.cpp
+	"model_vccs.h"
+
+1397649514 source:c:\users\wangyh\desktop\beta4\device\model\model_vcvs.cpp
+	"model_vcvs.h"
+
+1397649515 source:c:\users\wangyh\desktop\beta4\device\model\model_vsrc.cpp
+	"model_vsrc.h"
+
+1397656000 source:c:\users\wangyh\desktop\beta4\main.cpp
+	"circuit.h"
+
